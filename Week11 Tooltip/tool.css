@@ -1,0 +1,99 @@
+.tool {
+    margin-top: 60px;
+}
+
+.tool button {
+    display: block;
+    width: 250px;
+    height: 60px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgb(103, 168, 241);
+    position: relative;
+}
+
+
+.tooltip::after {
+    background-color: #333;
+    border-radius: 10px;
+    color: rgb(103,168,241);
+    display: none;
+    padding: 10px 15px;
+    position: absolute;
+    text-align: center;
+    z-index: 9;
+}
+
+.tooltip.top::after {
+    content: 'top';
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, calc(-100% - 10px));
+}
+
+.tooltip.bottom::after {
+    content: 'bottom';
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, calc(100% + 30px));
+}
+
+.tooltip.right::after {
+    content: 'right';
+    top: 0;
+    right: 0;
+    transform: translateX(calc(100% + 10px));
+}
+
+.tooltip.left::after {
+    content: 'left';
+    top: 0;
+    left: 0;
+    transform: translateX(calc(-100% - 10px));
+}
+
+.tooltip:hover::after {
+    display: block;
+}
+
+.tooltip::before {
+    background-color: #333;
+    content: '';
+    display:none;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    z-index: 9;
+}
+
+.tooltip:hover::before {
+    display: block;
+}
+
+.tooltip.top::before {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, calc(-100% - 5px)) rotate(45deg);
+}
+
+.tooltip.bottom::before {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, calc(100% + 5px)) rotate(45deg);
+}
+
+.tooltip.right::before {
+    top: 50%;
+    right: 0;
+    transform: translate(calc(100% + 5px), -105%) rotate(45deg);
+}
+
+.tooltip.left::before {
+    top: 50%;
+    left: 0;
+    transform: translate(calc(-100% - 5px), -105%) rotate(45deg);
+}
